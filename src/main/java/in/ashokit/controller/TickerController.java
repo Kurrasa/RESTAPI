@@ -29,19 +29,19 @@ public class TickerController
 		return new ResponseEntity<>(ticket,HttpStatus.CREATED);
 	}
 	
+	
 	@GetMapping(
-			value="ticket/{tid}")
-			
+			value="ticket/{tid}")		
 	public ResponseEntity<Ticket>getTicket(@RequestParam("tId") Integer tId)
 	{
 		Ticket ticket = service.getTicket(tId);
 		
 		return new ResponseEntity<>(ticket,HttpStatus.OK);
 	}
+	
+	
 	@GetMapping(
 			value="/tickets")
-			
-	
 	public ResponseEntity<List<Ticket>> getAllTickets(){
 		 List<Ticket> tickets = (List<Ticket>) service.getTickets();
 		 return new ResponseEntity<>(tickets,HttpStatus.OK);
